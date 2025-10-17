@@ -25,59 +25,7 @@ export default function CollectionSection({ scrollProgress }) {
       className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900"
     >
 
-      {/* Enhanced background with moving gradients and particles */}
-      <motion.div
-        style={{ y: yBg }}
-        className="absolute inset-0 bg-gradient-to-br from-amber-50/30 via-transparent to-blue-50/30 backdrop-blur-sm"
-        animate={{
-          background: [
-            "linear-gradient(135deg, rgba(251,191,36,0.3) 0%, transparent 50%, rgba(59,130,246,0.3) 100%)",
-            "linear-gradient(135deg, rgba(59,130,246,0.3) 0%, transparent 50%, rgba(251,191,36,0.3) 100%)",
-            "linear-gradient(135deg, rgba(251,191,36,0.3) 0%, transparent 50%, rgba(59,130,246,0.3) 100%)"
-          ]
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      />
 
-      {/* Animated particles */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gradient-to-r from-amber-400 to-blue-500 rounded-full"
-            style={{
-              left: `${15 + i * 10}%`,
-              top: `${20 + i * 8}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, 10, 0],
-              opacity: [0.2, 0.6, 0.2],
-              scale: [1, 1.8, 1]
-            }}
-            transition={{
-              duration: 4 + i * 0.3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.4
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Luxury accent elements */}
-      <div className="absolute inset-0 opacity-10">
-        <motion.div
-          className="absolute top-10 right-10 w-20 h-20 border-2 border-amber-400 rounded-full"
-          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute bottom-10 left-10 w-16 h-16 border-2 border-blue-400 rounded-full"
-          animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
 
       <motion.div
         style={{ y: yContent }}
@@ -175,7 +123,7 @@ export default function CollectionSection({ scrollProgress }) {
                       {item.desc}
                     </motion.p>
                     <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm text-amber-400 font-medium bg-amber-900/50 px-3 py-1 rounded-full neon-glow">Premium</span>
+                      <span className="text-sm text-amber-900 font-medium bg-amber-200 px-3 py-1 rounded-full">Premium</span>
                       <motion.div
                         className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center gem-particle"
                         whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}

@@ -21,17 +21,7 @@ export default function MeaningSection({ scrollProgress }) {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900">
 
-      {/* Glassmorphism background elements */}
-      <motion.div
-        style={{ y: yBg }}
-        className="absolute inset-0 bg-gradient-to-br from-amber-50/20 via-transparent to-blue-50/20 backdrop-blur-sm"
-      />
 
-      {/* Luxury geometric patterns */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-40 h-40 border border-amber-400 transform rotate-45"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 border border-blue-400 transform -rotate-45"></div>
-      </div>
 
       <motion.div
         style={{ y: yContent }}
@@ -65,7 +55,7 @@ export default function MeaningSection({ scrollProgress }) {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-lg md:text-xl text-blue-100 leading-relaxed text-center mb-16 font-light max-w-4xl mx-auto"
           >
-            Aqeeq stones have been treasured for centuries, symbolizing <span className="font-semibold text-amber-700 bg-amber-50/30 px-2 py-1 rounded">strength</span>, <span className="font-semibold text-blue-700 bg-blue-50/30 px-2 py-1 rounded">protection</span>, <span className="font-semibold text-green-700 bg-green-50/30 px-2 py-1 rounded">positivity</span>, and <span className="font-semibold text-purple-700 bg-purple-50/30 px-2 py-1 rounded">grounding energy</span>. Each piece carries unique energy and patterns that inspire creativity and focus.
+            Aqeeq stones have been treasured for centuries, symbolizing <span className="font-semibold text-amber-400 bg-amber-900/50 px-2 py-1 rounded">strength</span>, <span className="font-semibold text-blue-400 bg-blue-900/50 px-2 py-1 rounded">protection</span>, <span className="font-semibold text-green-400 bg-green-900/50 px-2 py-1 rounded">positivity</span>, and <span className="font-semibold text-purple-400 bg-purple-900/50 px-2 py-1 rounded">grounding energy</span>. Each piece carries unique energy and patterns that inspire creativity and focus.
           </motion.p>
 
           <motion.div

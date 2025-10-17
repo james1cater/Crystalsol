@@ -63,20 +63,7 @@ export default function GallerySection({ scrollProgress }) {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900">
 
-      {/* Glassmorphism background */}
-      <motion.div
-        style={{ y: yBg }}
-        className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-amber-50/30 backdrop-blur-sm"
-      />
 
-      {/* Luxury accent elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-24 h-24 border border-amber-400 rounded-full parallax-float"></div>
-        <div className="absolute bottom-20 right-20 w-20 h-20 border border-blue-400 rounded-full parallax-float"></div>
-      </div>
-
-      {/* Floating Particles */}
-      <FloatingParticles />
 
       <motion.div
         style={{ y: yContent }}
@@ -161,7 +148,7 @@ export default function GallerySection({ scrollProgress }) {
                             Like
                           </button>
                         </div>
-                        <span className="text-xs bg-amber-900/80 px-2 py-1 rounded-full neon-glow">Premium</span>
+                        <span className="text-xs bg-amber-200 text-amber-900 px-2 py-1 rounded-full">Premium</span>
                       </div>
                     </div>
                   </div>

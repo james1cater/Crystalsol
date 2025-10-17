@@ -97,20 +97,7 @@ export default function VisitSection({ scrollProgress }) {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900">
 
-      {/* Glassmorphism background elements */}
-      <motion.div
-        style={{ y: yBg }}
-        className="absolute inset-0 bg-gradient-to-br from-amber-50/20 via-transparent to-blue-50/20 backdrop-blur-sm"
-      />
 
-      {/* Luxury geometric patterns */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 left-1/3 w-48 h-48 border border-amber-400 transform rotate-12 parallax-float"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-36 h-36 border border-blue-400 transform -rotate-12 parallax-float"></div>
-      </div>
-
-      {/* Animated Background */}
-      <AnimatedBackground />
 
       <motion.div
         style={{ y: yContent }}
@@ -144,7 +131,7 @@ export default function VisitSection({ scrollProgress }) {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-lg md:text-xl text-blue-100 leading-relaxed text-center mb-16 font-light max-w-4xl mx-auto"
           >
-            Join us at the <span className="font-semibold text-amber-700 bg-amber-50/30 px-2 py-1 rounded">Student Souk event</span> to explore our collection of beautiful Aqeeq stones and handcrafted pieces. Experience the story and craftsmanship behind each creation in an intimate setting.
+            Join us at the <span className="font-semibold text-amber-400 bg-amber-900/50 px-2 py-1 rounded">Student Souk event</span> to explore our collection of beautiful Aqeeq stones and handcrafted pieces. Experience the story and craftsmanship behind each creation in an intimate setting.
           </motion.p>
 
           <motion.div
@@ -174,9 +161,9 @@ export default function VisitSection({ scrollProgress }) {
                   <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300 gem-particle">
                     <info.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-lg text-white mb-2 group-hover:text-amber-400 transition-colors duration-300 holographic">{info.title}</h3>
-                  <p className="text-blue-200 text-sm font-medium mb-1">{info.desc}</p>
-                  <p className="text-blue-300 text-xs">{info.detail}</p>
+                  <h3 className="font-bold text-lg text-gray-200 mb-2 group-hover:text-gray-300 transition-colors duration-300">{info.title}</h3>
+                  <p className="text-blue-200 text-sm font-medium mb-1 text-morph">{info.desc}</p>
+                  <p className="text-blue-300 text-xs text-morph">{info.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -189,14 +176,14 @@ export default function VisitSection({ scrollProgress }) {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-amber-900/50 to-blue-900/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg morphing-bg">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 holographic">Ready to Experience Luxury?</h3>
+            <div className="bg-slate-800/50 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg morphing-bg">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-200 mb-4 holographic">Ready to Experience Luxury?</h3>
               <p className="text-blue-200 mb-8 font-light">Discover pieces that resonate with your soul and tell your unique story.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-amber-500/30 transition-all duration-300 neon-glow">
+                <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300">
                   Find Our Booth
                 </button>
-                <button className="border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 glitch">
+                <button className="border-2 border-amber-500 text-amber-900 bg-amber-200 hover:bg-amber-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300">
                   Learn More
                 </button>
               </div>

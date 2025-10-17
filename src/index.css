@@ -168,3 +168,15 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Text Morph Animation */
+@keyframes text-morph {
+  0%, 100% { transform: translateX(0px) translateY(0px) scale(1); }
+  25% { transform: translateX(5px) translateY(-5px) scale(1.05); }
+  50% { transform: translateX(-5px) translateY(5px) scale(0.95); }
+  75% { transform: translateX(3px) translateY(-3px) scale(1.02); }
+}
+
+.text-morph {
+  animation: text-morph 8s ease-in-out infinite;
+}

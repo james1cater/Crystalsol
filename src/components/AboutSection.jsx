@@ -16,72 +16,9 @@ export default function AboutSection({ scrollProgress }) {
   return (
     <motion.section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"
+      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900"
     >
-      {/* Enhanced background with moving gradients and particles */}
-      <motion.div
-        style={{ y: yBg1 }}
-        className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-amber-200/20 to-blue-200/20 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl -translate-y-1/2 translate-x-1/2"
-        animate={{
-          background: [
-            "radial-gradient(circle, rgba(251,191,36,0.2) 0%, rgba(59,130,246,0.2) 100%)",
-            "radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(251,191,36,0.2) 100%)",
-            "radial-gradient(circle, rgba(251,191,36,0.2) 0%, rgba(59,130,246,0.2) 100%)"
-          ]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-      />
-      <motion.div
-        style={{ y: yBg2 }}
-        className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tl from-blue-200/20 to-amber-200/20 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl translate-y-1/2 -translate-x-1/2"
-        animate={{
-          background: [
-            "radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(251,191,36,0.2) 100%)",
-            "radial-gradient(circle, rgba(251,191,36,0.2) 0%, rgba(59,130,246,0.2) 100%)",
-            "radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(251,191,36,0.2) 100%)"
-          ]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      />
 
-      {/* Animated particles */}
-      <div className="absolute inset-0 opacity-30">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-amber-400 rounded-full"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1]
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.2
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Luxury accent elements */}
-      <div className="absolute inset-0 opacity-5">
-        <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-amber-400 rounded-full"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-24 h-24 border border-blue-400 rounded-full"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
 
       <motion.div
         style={{ y: yContent }}
@@ -93,7 +30,7 @@ export default function AboutSection({ scrollProgress }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block text-amber-600 font-semibold text-sm uppercase tracking-wider mb-4 bg-amber-50/50 px-4 py-2 rounded-full border border-amber-200/50"
+            className="inline-block text-amber-900 font-semibold text-sm uppercase tracking-wider mb-4 bg-amber-200 px-4 py-2 rounded-full border border-amber-300"
           >
             Our Story
           </motion.span>
