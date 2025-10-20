@@ -2,6 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView, useTransform } from "framer-motion";
 import { Eye, Heart } from "lucide-react";
 
+const imgCopy = new URL('/image copy.png', import.meta.url).href;
+const imgCopy2 = new URL('/image copy 2.png', import.meta.url).href;
+const imgCopy4 = new URL('/image copy 4.png', import.meta.url).href;
+const imgCopy5 = new URL('/image copy 5.png', import.meta.url).href;
+const imgCopy7 = new URL('/image copy 7.png', import.meta.url).href;
+
 // Floating gem particles component
 const FloatingParticles = () => (
   <div className="absolute inset-0 pointer-events-none">
@@ -41,33 +47,51 @@ export default function GallerySection({ scrollProgress }) {
 
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&q=80",
+      src: imgCopy,
       alt: "Elegant Aqeeq necklace",
       title: "Celestial Harmony",
       desc: "A masterpiece of blue Aqeeq stones"
     },
     {
-      src: "https://images.unsplash.com/photo-1574169208507-8437617482de?w=500&q=80",
+      src: imgCopy2,
       alt: "Red Aqeeq bracelet",
       title: "Crimson Elegance",
       desc: "Vibrant red stones in gold setting"
     },
     {
-      src: "https://images.unsplash.com/photo-1611085583200-a3b181a88402?w=500&q=80",
+      src: imgCopy4,
       alt: "White Aqeeq ring",
       title: "Pure Serenity",
       desc: "Timeless white Aqeeq craftsmanship"
     },
+    {
+      src: imgCopy5,
+      alt: "Green Aqeeq pendant",
+      title: "Emerald Grace",
+      desc: "Stunning green Aqeeq in silver mount"
+    },
+    {
+      src: imgCopy7,
+      alt: "Black Aqeeq beads",
+      title: "Midnight Mystique",
+      desc: "Elegant black Aqeeq bead collection"
+    },
   ];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900">
-
-
+    <motion.section
+      ref={ref}
+      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+    >
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      </div>
 
       <motion.div
         style={{ y: yContent }}
-        className="relative max-w-7xl mx-auto px-6"
+        className="relative max-w-7xl mx-auto px-6 z-10"
       >
         {/* Glassmorphism container */}
         <div className="backdrop-blur-md bg-slate-900/20 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -101,7 +125,7 @@ export default function GallerySection({ scrollProgress }) {
 
           <motion.div
             ref={imagesRef}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-3 lg:grid-cols-5 gap-8"
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -171,6 +195,6 @@ export default function GallerySection({ scrollProgress }) {
           </motion.div>
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }

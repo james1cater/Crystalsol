@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import CollectionSection from './components/CollectionSection';
@@ -11,12 +13,16 @@ import CursorTrail from './components/CursorTrail';
 import AnimatedFooter from './components/AnimatedFooter';
 import "./index.css";
 
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
 export default function App() {
   const { scrollYProgress } = useScroll();
 
   return (
     <CursorTrail>
       <div className="App">
+
 
         {/* Original Aqeeq Website Sections */}
         <section id="hero">

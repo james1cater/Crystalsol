@@ -95,13 +95,19 @@ export default function VisitSection({ scrollProgress }) {
   ];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-slate-900">
-
-
+    <motion.section
+      ref={ref}
+      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden bg-gradient-to-bl from-slate-900 via-slate-800 to-slate-900"
+    >
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      </div>
 
       <motion.div
         style={{ y: yContent }}
-        className="relative max-w-6xl mx-auto px-6"
+        className="relative max-w-6xl mx-auto px-6 z-10"
       >
         {/* Glassmorphism container */}
         <div className="backdrop-blur-md bg-slate-900/20 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -191,6 +197,6 @@ export default function VisitSection({ scrollProgress }) {
           </motion.div>
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
