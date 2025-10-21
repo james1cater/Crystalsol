@@ -8,6 +8,7 @@ import { useCursor } from "./CursorTrail";
 import img8 from '/image copy 8.png';
 import img6 from '/image copy 6.png';
 import img3 from '/image copy 3.png';
+import img4 from '/image copy 4.png';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -81,9 +82,9 @@ export default function CollectionSection({ scrollProgress }) {
   }, []);
 
   const items = [
-    { title: "Red Aqeeq", desc: "Bright red, pure energy", img: img8 },
-    { title: "Blue Aqeeq", desc: "Calm and serene", img: img6 },
-    { title: "White Aqeeq", desc: "Purity and elegance", img: img3 },
+    { title: "Multicolor Bonsai Tree", desc: "gemstone display tree", img: img4 },
+    { title: "Agate bracelet", desc: "Handcrafted Gem Band", img: img6 },
+    { title: "Orgonite pyramid", desc: "resin art pyramid", img: img3 },
   ];
 
   return (
@@ -124,7 +125,7 @@ export default function CollectionSection({ scrollProgress }) {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-lg md:text-xl text-blue-100 text-center mb-16 font-light max-w-3xl mx-auto"
           >
-            Discover our exquisite selection of handcrafted Aqeeq jewelry, each piece telling a story of elegance and tradition.
+            Explore our variety of agate collection, ranging from bracelets, to orgonite pyramids to delicately crafted agate trees
           </motion.p>
 
           {/* Improved grid layout */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 export default function AnimatedFooter() {
   const [isActive, setIsActive] = useState(false);
@@ -95,17 +96,14 @@ export default function AnimatedFooter() {
                 transition={{ duration: 0.8, delay: 1.0 }}
                 className="flex space-x-4"
               >
-                {[Instagram, Facebook, Twitter].map((Icon, index) => (
-                  <motion.a
-                    key={index}
-                    href={Icon === Instagram ? "https://www.instagram.com/crystals.of.luxury_/" : "#"}
-                    className="w-10 h-10 bg-slate-800 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
+                <motion.a
+                  href="https://www.instagram.com/crystals.of.luxury_/"
+                  className="w-10 h-10 bg-slate-800 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Instagram className="w-5 h-5" />
+                </motion.a>
               </motion.div>
             </motion.div>
 
@@ -133,7 +131,7 @@ export default function AnimatedFooter() {
               >
                 {[
                   { icon: Mail, text: "crystalsofluxury@gmail.com", href: "mailto:crystalsofluxury@gmail.com" },
-                  { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
+                  { icon: Phone, text: "+971 55 102 6759", href: "tel:+971551026759" },
                   { icon: MapPin, text: "Student Souk Event", href: "#" }
                 ].map((item, index) => (
                   <motion.a
@@ -151,7 +149,7 @@ export default function AnimatedFooter() {
               </motion.div>
             </motion.div>
 
-            {/* Newsletter Section with Morphing CTA */}
+            {/* Quick Links Section */}
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, x: 30 }}
@@ -164,52 +162,36 @@ export default function AnimatedFooter() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-xl font-semibold text-amber-400"
               >
-                Stay Updated
+                Quick Links
               </motion.h4>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              <motion.div
+                className="space-y-4"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
-                className="text-slate-300"
               >
-                Subscribe to receive updates about new collections and exclusive offers.
-              </motion.p>
-
-              {/* Morphing CTA Button */}
-              <div className="relative">
-                <div id="wrap-cta" ref={wrapCtaRef} className="active">
-                  <button
-                    id="cta"
-                    className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                {[
+                  { text: "Home", href: "#hero" },
+                  { text: "Collection", href: "#collection" },
+                  { text: "Gallery", href: "#gallery" },
+                  { text: "About", href: "#about" }
+                ].map((item, index) => (
+                  <motion.a
+                    key={index}
+                    href={item.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="block text-slate-300 hover:text-amber-400 transition-colors duration-300 group"
                   >
-                    Subscribe Now
-                  </button>
-                </div>
-
-                <svg viewBox="0 0 215 110" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
-                  <polygon
-                    className="polymorph fill-amber-500"
-                    points="215,110 0,110 0,0 215,0"
-                  />
-                </svg>
-
-                <div className="container absolute inset-0">
-                  <div id="content" ref={contentRef} className="flex items-center justify-center h-full">
-                    <div className="bg-slate-800 p-4 rounded-lg shadow-xl max-w-sm w-full">
-                      <h3 className="text-lg font-semibold text-amber-400 mb-2">Thank You!</h3>
-                      <p className="text-slate-300 text-sm mb-3">You've been subscribed to our newsletter.</p>
-                      <button
-                        id="close"
-                        className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    <span className="group-hover:translate-x-2 inline-block transition-transform duration-300">{item.text}</span>
+                  </motion.a>
+                ))}
+              </motion.div>
             </motion.div>
+
+
           </motion.div>
         </motion.div>
 
@@ -226,7 +208,7 @@ export default function AnimatedFooter() {
                 className="text-slate-400 text-sm"
                 whileHover={{ color: "#fbbf24" }}
               >
-                © 2024 Crystals of Luxury. All rights reserved.
+                © 2025 Crystals of Luxury. All rights reserved.
               </motion.p>
 
               <motion.div
@@ -235,16 +217,18 @@ export default function AnimatedFooter() {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
               >
-                {["Privacy Policy", "Terms of Service", "Shipping Info"].map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    className="hover:text-amber-400 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {item}
-                  </motion.a>
-                ))}
+                <Link
+                  to="/privacy-policy"
+                  className="hover:text-amber-400 transition-colors duration-300"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/terms-of-service"
+                  className="hover:text-amber-400 transition-colors duration-300"
+                >
+                  Terms of Service
+                </Link>
               </motion.div>
             </div>
           </div>

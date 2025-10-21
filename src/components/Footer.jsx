@@ -13,8 +13,6 @@ export default function Footer() {
         <p className="text-sm md:text-base">&copy; 2025 Crystals of Luxury. All rights reserved.</p>
         <div className="flex justify-center gap-6">
           <a href="#" className="hover:text-amber-400 transition-colors duration-300">Instagram</a>
-          <a href="#" className="hover:text-amber-400 transition-colors duration-300">Facebook</a>
-          <a href="#" className="hover:text-amber-400 transition-colors duration-300">Twitter</a>
         </div>
       </motion.div>
     </footer>

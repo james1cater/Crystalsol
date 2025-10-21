@@ -150,8 +150,8 @@ export default function HeroSection({ scrollProgress }) {
               <span className="text-xl font-bold text-white">Crystals of Luxury</span>
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation and Social on the right */}
+            <div className="ml-auto hidden md:flex items-center space-x-8">
               <motion.button
                 onClick={() => scrollToSection('hero')}
                 className="text-white/80 hover:text-amber-400 transition-colors duration-300 font-medium"
@@ -173,33 +173,24 @@ export default function HeroSection({ scrollProgress }) {
               >
                 Gallery
               </motion.button>
-              <motion.button
-                onClick={() => scrollToSection('visit')}
-                className="text-white/80 hover:text-amber-400 transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                Visit
-              </motion.button>
-            </div>
-
-            {/* Contact Info & Social */}
-            <div className="hidden md:flex items-center space-x-4">
-              <motion.a
-                href="https://www.instagram.com/crystals.of.luxury_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-amber-400 transition-colors duration-300"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-              >
-                <Instagram className="w-5 h-5" />
-              </motion.a>
-              <motion.a
-                href="mailto:crystalsofluxury@gmail.com"
-                className="text-white/80 hover:text-amber-400 transition-colors duration-300"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Mail className="w-5 h-5" />
-              </motion.a>
+              <div className="flex items-center space-x-4">
+                <motion.a
+                  href="https://www.instagram.com/crystals.of.luxury_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-amber-400 transition-colors duration-300"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <Instagram className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href="mailto:crystalsofluxury@gmail.com"
+                  className="text-white/80 hover:text-amber-400 transition-colors duration-300"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <Mail className="w-5 h-5" />
+                </motion.a>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -243,13 +234,6 @@ export default function HeroSection({ scrollProgress }) {
                 whileHover={{ x: 10 }}
               >
                 Gallery
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection('visit')}
-                className="block w-full text-left text-white/80 hover:text-amber-400 transition-colors duration-300 font-medium py-2"
-                whileHover={{ x: 10 }}
-              >
-                Visit
               </motion.button>
               <div className="flex items-center space-x-4 pt-4 border-t border-white/10">
                 <motion.a
@@ -371,7 +355,7 @@ export default function HeroSection({ scrollProgress }) {
                 }}
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <img src="/image.png" alt="Logo" className="w-28 h-28 md:w-48 md:h-48 object-contain diamond-pulse" />
+                <img src="/image copy 9.png" alt="Logo" className="w-28 h-28 md:w-48 md:h-48 object-contain diamond-pulse" />
               </motion.div>
             </div>
           </div>

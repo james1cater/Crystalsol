@@ -96,7 +96,7 @@ export default function MeaningSection({ scrollProgress }) {
             transition={{ duration: 1, delay: 0.8 }}
             className="mt-16 text-center"
           >
-            <blockquote className="text-2xl md:text-3xl text-slate-800 font-light italic max-w-4xl mx-auto leading-relaxed">
+            <blockquote className="text-2xl md:text-3xl text-white font-light italic max-w-4xl mx-auto leading-relaxed">
               "In the heart of every Aqeeq lies a story of resilience, beauty, and timeless wisdom passed down through generations."
             </blockquote>
             <div className="mt-6 flex items-center justify-center gap-2">
